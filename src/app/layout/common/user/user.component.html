@@ -6,14 +6,8 @@
             *ngIf="showAvatar && user.avatar"
             [src]="user.avatar"
         /> -->
-        <img
-            class="w-7 h-7 rounded-full"
-
-        />
-        <mat-icon
-            *ngIf="!showAvatar || !user.avatar"
-            [svgIcon]="'heroicons_outline:user-circle'"
-        ></mat-icon>
+        <img class="w-7 h-7 rounded-full" />
+        <mat-icon svgIcon="heroicons_outline:user-circle"></mat-icon>
         <!-- <span
             class="absolute right-0 bottom-0 w-2 h-2 rounded-full"
             [ngClass]="{'mr-px mb-px': !showAvatar || !user.avatar,

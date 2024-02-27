@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./farmacia.component.scss']
 })
 export class FarmaciaComponent {
-
+    isLoading
+    searchInputControl
+    createRemedio(){}
+    remedios$
 }

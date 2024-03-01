@@ -1,8 +1,8 @@
 import { Route } from '@angular/router';
-import { AuthGuard } from 'app/core/auth/guards/auth.guard';
-import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
-import { LayoutComponent } from 'app/layout/layout.component';
 import { InitialDataResolver } from 'app/app.resolvers';
+import { AuthGuard } from 'app/core/auth/guards/auth.guard';
+import { LayoutComponent } from 'app/layout/layout.component';
+import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
 
 // @formatter:off
 /* eslint-disable max-len */
@@ -126,11 +126,19 @@ export const appRoutes: Route[] = [
                     ),
             },
 
+            // {
+            //     path: 'farmacia',
+            //     loadChildren: () =>
+            //         import('app/modules/admin/farmacia/farmacia.module').then(
+            //             (m) => m.FarmaciaModule
+            //         ),
+            // },
+
             {
                 path: 'farmacia',
                 loadChildren: () =>
-                    import('app/modules/admin/farmacia/farmacia.module').then(
-                        (m) => m.FarmaciaModule
+                    import('app/modules/admin/ecommerce/ecommerce.module').then(
+                        (m) => m.ECommerceModule
                     ),
             },
 

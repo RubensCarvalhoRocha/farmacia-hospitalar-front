@@ -42,7 +42,6 @@ const farmaciaRoutes: Route[] = [
         MatSlideToggleModule,
         MatTooltipModule,
         SharedModule
-
     ],
 })
 export class FarmaciaModule {}

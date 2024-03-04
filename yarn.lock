@@ -5589,6 +5589,13 @@ ngx-quill@20.0.1:
   dependencies:
     tslib "^2.3.0"
 
+ngx-scanner-qrcode@1.6.6:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/ngx-scanner-qrcode/-/ngx-scanner-qrcode-1.6.6.tgz#775c2e2b3077e41001614a7b0f83a75ae69baee9"
+  integrity sha512-p9UNbFeqM6JV6ThR/W/+AhU/GYcS5IYh+gLSUoGz5fvipbNbDLm0/xYvn8VqMzUB9Tx/6eeCcvs90MKMxDqOVg==
+  dependencies:
+    tslib "^1.9.0"
+
 nice-napi@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/nice-napi/-/nice-napi-1.0.2.tgz#dc0ab5a1eac20ce548802fc5686eaa6bc654927b"
@@ -7267,10 +7274,10 @@ typed-assert@^1.0.8:
   resolved "https://registry.yarnpkg.com/typed-assert/-/typed-assert-1.0.9.tgz#8af9d4f93432c4970ec717e3006f33f135b06213"
   integrity sha512-KNNZtayBCtmnNmbo5mG47p1XsCyrx6iVqomjcZnec/1Y5GGARaxPs6r49RnSPeUP3YjNYiU9sQHAtY4BBvnZwg==
 
-typescript@4.9.4:
-  version "4.9.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.4.tgz#a2a3d2756c079abda241d75f149df9d561091e78"
-  integrity sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==
+typescript@4.8.2:
+  version "4.8.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.2.tgz#e3b33d5ccfb5914e4eeab6699cf208adee3fd790"
+  integrity sha512-C0I1UsrrDHo2fYI5oaCGbSejwX4ch+9Y5jTQELvovfmFkK3HHSZJB8MSJcWLmCUBzQBchCrZ9rMRV6GuNrvGtw==
 
 ua-parser-js@^0.7.30:
   version "0.7.37"

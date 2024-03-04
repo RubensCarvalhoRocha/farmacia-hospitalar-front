@@ -22,6 +22,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
         type : 'basic',
         icon : 'heroicons_outline:beaker',
         link : '/farmacia'
+    },
+    {
+        id   : 'QrCode',
+        title: 'QR-CODE',
+        type : 'basic',
+        icon : 'svgIcon="qr_code_scanner"',
+        link : '/qr-code'
     }
 ];
 export const compactNavigation: FuseNavigationItem[] = [

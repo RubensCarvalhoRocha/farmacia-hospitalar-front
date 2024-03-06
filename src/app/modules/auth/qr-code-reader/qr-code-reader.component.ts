@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
     styleUrls: ['./qr-code-reader.component.scss'],
 })
 export class QrCodeReaderComponent {
+    qrCodeValue: string | null = null;
 
+    onScanSuccess(result: string): void {
+        this.qrCodeValue = result;
+    }
 }

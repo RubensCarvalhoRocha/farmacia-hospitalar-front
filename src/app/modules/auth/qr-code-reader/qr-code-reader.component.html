@@ -1,1 +1,4 @@
-<zxing-scanner></zxing-scanner>
+<zxing-scanner (scanSuccess)="onScanSuccess($event)"></zxing-scanner>
+<div *ngIf="qrCodeValue">
+  <p>Valor do QR Code: {{ qrCodeValue }}</p>
+</div>

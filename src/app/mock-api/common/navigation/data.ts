@@ -27,7 +27,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
         id   : 'QrCode',
         title: 'QR-CODE',
         type : 'basic',
-        icon : 'svgIcon="qr_code_scanner"',
+        // icon : 'svgIcon="qr_code_scanner"',
         link : '/qr-code'
     }
 ];

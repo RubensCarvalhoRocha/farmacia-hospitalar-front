@@ -11,4 +11,8 @@ export class QrCodeReaderComponent {
     onScanSuccess(result: string): void {
         this.qrCodeValue = result;
     }
+
+    enviarCodigoObtido(){
+
+    }
 }

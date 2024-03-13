@@ -55,6 +55,10 @@ export class AuthSignInComponent implements OnInit
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
 
+    startQrCodeReader() {
+        this._router.navigate(['/qr-code']);
+    }
+
     /**
      * Sign in
      */

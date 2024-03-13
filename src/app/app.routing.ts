@@ -62,6 +62,13 @@ export const appRoutes: Route[] = [
                         (m) => m.AuthSignUpModule
                     ),
             },
+            {
+                path: 'qr-code',
+                loadChildren: () =>
+                    import('app/modules/auth/qr-code-reader/qr-code-reader.module').then(
+                        (m) => m.QrCodeReaderModule
+                    ),
+            },
         ],
     },
 

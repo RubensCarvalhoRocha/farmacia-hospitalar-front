@@ -1,4 +1,144 @@
-<zxing-scanner (scanSuccess)="onScanSuccess($event)"></zxing-scanner>
-<div *ngIf="qrCodeValue">
-  <p>Valor do QR Code: {{ qrCodeValue }}</p>
+<div
+    class="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0"
+>
+    <div
+        class="md:flex md:items-center md:justify-end w-full sm:w-auto md:h-full md:w-1/2 py-8 px-4 sm:p-12 md:p-16 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card"
+    >
+        <zxing-scanner (scanSuccess)="onScanSuccess($event)"></zxing-scanner>
+        <div *ngIf="qrCodeValue">
+            <p>Valor do QR Code: {{ qrCodeValue }}</p>
+        </div>
+    </div>
+    <div
+        class="relative hidden md:flex flex-auto items-center justify-center w-1/2 h-full p-16 lg:px-28 overflow-hidden bg-gray-800 dark:border-l"
+    >
+        <!-- Background - @formatter:off -->
+        <!-- Rings -->
+        <svg
+            class="absolute inset-0 pointer-events-none"
+            viewBox="0 0 960 540"
+            width="100%"
+            height="100%"
+            preserveAspectRatio="xMidYMax slice"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <g
+                class="text-gray-700 opacity-25"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="100"
+            >
+                <circle r="234" cx="196" cy="23"></circle>
+                <circle r="234" cx="790" cy="491"></circle>
+            </g>
+        </svg>
+        <!-- Dots -->
+        <svg
+            class="absolute -top-16 -right-16 text-gray-700"
+            viewBox="0 0 220 192"
+            width="220"
+            height="192"
+            fill="none"
+        >
+            <defs>
+                <pattern
+                    id="837c3e70-6c3a-44e6-8854-cc48c737b659"
+                    x="0"
+                    y="0"
+                    width="20"
+                    height="20"
+                    patternUnits="userSpaceOnUse"
+                >
+                    <rect
+                        x="0"
+                        y="0"
+                        width="4"
+                        height="4"
+                        fill="currentColor"
+                    ></rect>
+                </pattern>
+            </defs>
+            <rect
+                width="220"
+                height="192"
+                fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"
+            ></rect>
+        </svg>
+        <!-- @formatter:on -->
+        <!-- Content -->
+        <div class="z-10 relative w-full max-w-2xl">
+            <div
+                class="flex flex-col flex-auto overflow-y-auto bg-card dark:bg-default"
+            >
+                <!-- Header -->
+                <div
+                    class="flex flex-0 items-center h-18 px-6 border-b bg-gray-50 dark:bg-transparent"
+                >
+                    <button mat-icon-button (click)="drawer.close()">
+                        <mat-icon
+                            [svgIcon]="'heroicons_outline:arrow-narrow-left'"
+                        ></mat-icon>
+                    </button>
+                    <div class="ml-2 text-2xl font-semibold">Profile</div>
+                </div>
+
+                <div class="px-6">
+                    <!-- Profile photo -->
+                    <div
+                        class="group relative flex flex-0 mt-8 mx-auto w-40 h-40 rounded-full"
+                    >
+
+                        <ng-container>
+                            <img
+                                class="w-full h-full rounded-full object-cover"
+
+                            />
+                        </ng-container>
+                        <ng-container>
+                            <div
+                                class="flex items-center justify-center w-full h-full rounded-full text-8xl font-semibold uppercase bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                            ></div>
+                        </ng-container>
+                    </div>
+
+                    <!-- Profile info -->
+                    <div class="flex flex-col mt-8 mx-2">
+                        <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <mat-icon
+                                class="icon-size-5"
+                                matPrefix
+                                [svgIcon]="'heroicons_solid:user-circle'"
+                            ></mat-icon>
+                            <input matInput />
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Email</mat-label>
+                            <mat-icon
+                                class="icon-size-5"
+                                matPrefix
+                                [svgIcon]="'heroicons_solid:mail'"
+                            ></mat-icon>
+                            <input matInput />
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>About</mat-label>
+                            <mat-icon
+                                class="icon-size-5"
+                                matPrefix
+                                [svgIcon]="'heroicons_solid:identification'"
+                            ></mat-icon>
+                            <input matInput />
+                        </mat-form-field>
+                        <div class="flex items-center justify-end mt-4">
+                            <button (click)="drawer.close()" mat-button>
+                                Cancel
+                            </button>
+                            <button class="ml-2" mat-flat-button>Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -29,6 +29,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
         type : 'basic',
         // icon : 'svgIcon="qr_code_scanner"',
         link : '/qr-code'
+    },
+
+    {
+        id   : 'inventario',
+        title: 'Inventário',
+        type : 'basic',
+        // icon : 'svgIcon="qr_code_scanner"',
+        link : '/inventario'
     }
 ];
 export const compactNavigation: FuseNavigationItem[] = [

@@ -157,6 +157,14 @@ export const appRoutes: Route[] = [
                     ),
             },
 
+            {
+                path: 'inventario',
+                loadChildren: () =>
+                    import('app/modules/admin/inventario/inventario.module').then(
+                        (m) => m.InventarioModule
+                    ),
+            },
+
         ],
     },
 ];

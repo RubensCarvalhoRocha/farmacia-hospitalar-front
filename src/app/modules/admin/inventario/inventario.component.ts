@@ -36,22 +36,22 @@ export class InventarioComponent implements OnInit {
         });
     }
 
-    // remediosFilter(text: string, applyFilter: boolean = true) {
-    //     this.searchText = text;
-    //     if (applyFilter) {
-    //         const searchTextLower = this.searchText.trim().toLowerCase();
-    //         this.remediosList.data = this.originalRemediosList.filter(
-    //             (remedio) => {
-    //                 return (
-    //                     searchTextLower === '' ||
-    //                     remedio.nomeMedicamento
-    //                         .toLowerCase()
-    //                         .includes(searchTextLower)
-    //                 );
-    //             }
-    //         );
-    //     }
-    // }
+    remediosFilter(text: string, applyFilter: boolean = true) {
+        this.searchText = text;
+        if (applyFilter) {
+            const searchTextLower = this.searchText.trim().toLowerCase();
+            this.remediosList.data = this.originalRemediosList.filter(
+                (remedio) => {
+                    return (
+                        searchTextLower === '' ||
+                        remedio.nomeMedicamento
+                            .toLowerCase()
+                            .includes(searchTextLower)
+                    );
+                }
+            );
+        }
+    }
 
     // openDialog(): void {
     //     const dialogRef = this._dialog.open(CertificateCreateComponent, {

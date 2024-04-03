@@ -17,7 +17,7 @@
                         [autocomplete]="'off'"
                         [placeholder]="'Buscar'"
                         #searchField
-
+                        (keyup)="remediosFilter(searchField.value)"
                     />
                 </mat-form-field>
 

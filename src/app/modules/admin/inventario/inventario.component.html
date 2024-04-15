@@ -77,14 +77,14 @@
 
                 <!-- Edit Botom Column -->
                 <ng-container matColumnDef="actions">
-                    <th mat-header-cell *matHeaderCellDef>Ações</th>
+                    <th mat-header-cell *matHeaderCellDef>Selecionar</th>
                     <td mat-cell *matCellDef="let remedios">
                         <button
                             mat-icon-button
                             class="p-1 border border-black rounded-full"
                             [routerLink]="remedios.id"
                         >
-                            <mat-icon class="text-black">edit</mat-icon>
+                        <mat-icon svgIcon="heroicons_outline:check-circle"></mat-icon>
                         </button>
                     </td>
                 </ng-container>

@@ -1,1 +1,30 @@
-<p>item works!</p>
+<div class="cart-item-wrapper">
+    <div>Nome:{{ item.nomeMedicamento }}</div>
+    <div>Dosagem: {{ item.medidaDosagem }}</div>
+    <div>
+        <input
+            type="number"
+            value="{{ item.estoque }}"
+            min="1"
+            id="{{ item.id }}"
+            [(ngModel)]="item.estoque"
+            (change)="onItemChanged($event)"
+        />
+    </div>
+    <div>
+        <button
+            type="button"
+            class="btn btn-default"
+            aria-label="Left Align"
+            id="{{ item.id }}"
+            (click)="onItemDeleted($event)"
+        >
+            <span
+                class="glyphicon glyphicon-remove"
+                aria-hidden="true"
+                id="{{ item.id }}"
+            >
+            </span>
+        </button>
+    </div>
+</div>

@@ -25,11 +25,12 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { FuseCardModule } from '@fuse/components/card';
 import { RouterModule } from '@angular/router';
+import { ItemComponent } from './item/item.component';
 
 
 @NgModule({
   declarations: [
-  InventarioComponent
+  InventarioComponent, ItemComponent
   ],
   imports: [
     RouterModule.forChild(InventarioRoutes),

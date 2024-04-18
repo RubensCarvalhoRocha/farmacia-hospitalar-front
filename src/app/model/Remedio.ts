@@ -6,6 +6,7 @@ export class Remedio {
     descricao?: string;
     imagem?: string;
     estoque?: number;
+    quantidade?: number;
 
     constructor(remedio?: Partial<Remedio>) {
         if (remedio) {

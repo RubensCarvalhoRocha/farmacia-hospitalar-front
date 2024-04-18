@@ -1,13 +1,14 @@
 <div class="cart-item-wrapper">
-    <div>Nome:{{ item.nomeMedicamento }}</div>
-    <div>Dosagem: {{ item.medidaDosagem }}</div>
+    <div>Nome: {{ item.nomeMedicamento }}</div>
+    <div>Dosagem: {{ item.dosagem }} {{ item.medidaDosagem }}</div>
+    <div>Quantidade: {{ item.quantidade }}</div>
     <div>
         <input
             type="number"
-            value="{{ item.estoque }}"
+            value="{{ item.quantidade }}"
             min="1"
             id="{{ item.id }}"
-            [(ngModel)]="item.estoque"
+            [(ngModel)]="item.quantidade"
             (change)="onItemChanged($event)"
         />
     </div>

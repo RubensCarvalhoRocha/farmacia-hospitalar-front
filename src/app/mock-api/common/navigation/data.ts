@@ -9,13 +9,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
         icon: 'heroicons_outline:chart-pie',
         link: '/example',
     },
-    // {
-    //     id   : 'farmacia',
-    //     title: 'Farmácia',
-    //     type : 'basic',
-    //     icon : 'heroicons_outline:beaker',
-    //     link : '/farmacia'
-    // }
     {
         id: 'farmacia',
         title: 'Farmácia',
@@ -27,7 +20,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
         id: 'QrCode',
         title: 'QR-CODE',
         type: 'basic',
-        // icon : 'svgIcon="qr_code_scanner"',
         link: '/qr-code',
     },
 
@@ -54,13 +46,7 @@ export const compactNavigation: FuseNavigationItem[] = [
         icon: 'heroicons_outline:chart-pie',
         link: '/example',
     },
-    // {
-    //     id   : 'farmacia',
-    //     title: 'Farmácia',
-    //     type : 'basic',
-    //     icon : 'heroicons_outline:beaker',
-    //     link : '/farmacia'
-    // }
+
     {
         id: 'farmacia',
         title: 'Referencia',
@@ -72,7 +58,6 @@ export const compactNavigation: FuseNavigationItem[] = [
         id: 'QrCode',
         title: 'QR-CODE',
         type: 'basic',
-        // icon : 'svgIcon="qr_code_scanner"',
         link: '/qr-code',
     },
 ];

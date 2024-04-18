@@ -41,6 +41,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
 ];
 export const compactNavigation: FuseNavigationItem[] = [
     {
+        id: 'inventario',
+        title: 'Inventário',
+        type: 'basic',
+        icon: 'heroicons_outline:beaker',
+        link: '/inventario',
+    },
+    {
         id: 'example',
         title: 'Example',
         type: 'basic',
@@ -56,7 +63,7 @@ export const compactNavigation: FuseNavigationItem[] = [
     // }
     {
         id: 'farmacia',
-        title: 'Farmácia',
+        title: 'Referencia',
         type: 'basic',
         icon: 'heroicons_outline:beaker',
         link: '/farmacia',
@@ -67,14 +74,6 @@ export const compactNavigation: FuseNavigationItem[] = [
         type: 'basic',
         // icon : 'svgIcon="qr_code_scanner"',
         link: '/qr-code',
-    },
-
-    {
-        id: 'inventario',
-        title: 'Inventário',
-        type: 'basic',
-        // icon : 'svgIcon="qr_code_scanner"',
-        link: '/inventario',
     },
 ];
 export const futuristicNavigation: FuseNavigationItem[] = [

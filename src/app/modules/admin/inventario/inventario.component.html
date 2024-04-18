@@ -11,6 +11,7 @@
         <div class="cart-wrapper">
             <div class="bg-gray-200 rounded px-4 py-1">
                 <div class="mt-4 flex flex-wrap justify-start">
+                    <div *ngIf="itens.length == 0">Não há nenhum item selecionado.</div>
                     <app-item
                         *ngFor="let item of itens; let i = index"
                         [item]="item"
@@ -22,7 +23,7 @@
                 </div>
 
                 <div class="mt-4 flex justify-end text-gray-700 font-semibold">
-                    <div>Total: {{ cartTotal }}</div>
+                    <!-- <div>Total: {{ cartTotal }}</div> -->
                 </div>
             </div>
         </div>

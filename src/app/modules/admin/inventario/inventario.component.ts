@@ -37,8 +37,9 @@ export class InventarioComponent implements OnInit {
     displayedColumns: string[] = [
         'nomeMedicamento',
         'dosagem',
+        'medidaDosagem',
+        'descricao',
         'estoque',
-        'imagem',
         'actions',
     ];
 
@@ -85,8 +86,20 @@ export class InventarioComponent implements OnInit {
         });
     }
 
-    retirarRemedio(itemRetirado: Remedio) {
-        console.log(itemRetirado);
-        this.itens.push(itemRetirado);
+    selecionarRemedio(itemSelecionado: Remedio) {
+        console.log(itemSelecionado);
+        this.itens.push(itemSelecionado);
     }
+
+    retirarRemedios(itens: Remedio[]) {
+        const itensSelecionadosIds = this.getItensSelecionadosIds(itens);
+        console.log('Itens selecionados IDs:', itensSelecionadosIds);
+        // Chamar a API para retirar os medicamentos com os IDs selecionados
+        // this._service.retirarMedicamentos(itensSelecionadosIds).subscribe(...);
+    }
+
+    getItensSelecionadosIds(itens: Remedio[]): number[] {
+        return itens.map((item) => item.id);
+    }
+
 }

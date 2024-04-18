@@ -49,7 +49,7 @@
                         class="w-1/4"
                         mat-flat-button
                         [color]="'primary'"
-                        [routerLink]="'adicionar'"
+                        (click)="retirarRemedios(itens)"
                     >
                         <span class="hidden sm:hidden md:block lg:block"
                             >Retirar</span
@@ -67,6 +67,14 @@
                 class="overflow-x-auto w-full"
             >
                 <!-- Id Column -->
+                <ng-container matColumnDef="nomeMedicamento">
+                    <th mat-header-cell *matHeaderCellDef>Nome do Medicamento</th>
+                    <td mat-cell *matCellDef="let remedios">
+                        {{ remedios?.nomeMedicamento }}
+                    </td>
+                </ng-container>
+
+                <!-- Name Column -->
                 <ng-container matColumnDef="dosagem">
                     <th mat-header-cell *matHeaderCellDef>Dosagem</th>
                     <td mat-cell *matCellDef="let remedios">
@@ -74,27 +82,27 @@
                     </td>
                 </ng-container>
 
-                <!-- Name Column -->
-                <ng-container matColumnDef="nomeMedicamento">
-                    <th mat-header-cell *matHeaderCellDef>Nome Medicamento</th>
+                <!-- City Column -->
+                <ng-container matColumnDef="medidaDosagem">
+                    <th mat-header-cell *matHeaderCellDef>Medida Dosagem</th>
                     <td mat-cell *matCellDef="let remedios">
-                        {{ remedios?.nomeMedicamento }}
+                        {{ remedios?.medidaDosagem }}
+                    </td>
+                </ng-container>
+
+                <!-- City Column -->
+                <ng-container matColumnDef="descricao">
+                    <th mat-header-cell *matHeaderCellDef>Descrição</th>
+                    <td mat-cell *matCellDef="let remedios">
+                        {{ remedios?.descricao }}
                     </td>
                 </ng-container>
 
                 <!-- City Column -->
                 <ng-container matColumnDef="estoque">
-                    <th mat-header-cell *matHeaderCellDef>Estoque</th>
-                    <td mat-cell *matCellDef="let remedios">
-                        {{ remedios?.estoque }}
-                    </td>
-                </ng-container>
-
-                <!-- City Column -->
-                <ng-container matColumnDef="imagem">
-                    <th mat-header-cell *matHeaderCellDef>Imagem</th>
-                    <td mat-cell *matCellDef="let remedios">
-                        {{ remedios?.imagem }}
+                    <th mat-header-cell *matHeaderCellDef>Descrição</th>
+                    <td mat-cell *matCellDef="let estoque">
+                        {{ estoque?.descricao }}
                     </td>
                 </ng-container>
 
@@ -105,7 +113,7 @@
                         <button
                             mat-icon-button
                             class="p-1 border border-black rounded-full"
-                            (click)="retirarRemedio(remedios)"
+                            (click)="selecionarRemedio(remedios)"
                         >
                             <mat-icon
                                 svgIcon="heroicons_outline:plus-circle"

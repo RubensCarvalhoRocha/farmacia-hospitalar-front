@@ -92,19 +92,28 @@ export class InventarioComponent implements OnInit {
     // }
 
     selecionarRemedio(itemSelecionado: Remedio) {
-        const itemExistente = this.itens.find((item) => item.id === itemSelecionado.id);
+        const itemExistente = this.itens.find(
+            (item) => item.id === itemSelecionado.id
+        );
         if (itemExistente) {
             // Item já existe, incremente a quantidade
             itemExistente.quantidade++;
         } else {
             // Item não existe, adicione à lista
-            this.itens.push({...itemSelecionado, quantidade: 1});
+            this.itens.push({ ...itemSelecionado, quantidade: 1 });
         }
     }
 
     retirarRemedios(itens: Remedio[]) {
         const itensSelecionadosIds = this.getItensSelecionadosIds(itens);
         console.log('Itens selecionados IDs:', itensSelecionadosIds);
+
+        const selectedItemsWithQuantity = this.itens;
+
+        // Loop through each item in the array
+        for (const item of selectedItemsWithQuantity) {
+            console.log('Item ID:', item.id, 'Quantity:', item.quantidade);
+        }
         // Chamar a API para retirar os medicamentos com os IDs selecionados
         // this._service.retirarMedicamentos(itensSelecionadosIds).subscribe(...);
     }
@@ -112,5 +121,4 @@ export class InventarioComponent implements OnInit {
     getItensSelecionadosIds(itens: Remedio[]): number[] {
         return itens.map((item) => item.id);
     }
-
 }

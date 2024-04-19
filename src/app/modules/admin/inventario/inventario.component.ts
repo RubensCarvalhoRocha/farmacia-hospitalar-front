@@ -86,9 +86,20 @@ export class InventarioComponent implements OnInit {
         });
     }
 
+    // selecionarRemedio(itemSelecionado: Remedio) {
+    //     console.log(itemSelecionado);
+    //     this.itens.push(itemSelecionado);
+    // }
+
     selecionarRemedio(itemSelecionado: Remedio) {
-        console.log(itemSelecionado);
-        this.itens.push(itemSelecionado);
+        const itemExistente = this.itens.find((item) => item.id === itemSelecionado.id);
+        if (itemExistente) {
+            // Item já existe, incremente a quantidade
+            itemExistente.quantidade++;
+        } else {
+            // Item não existe, adicione à lista
+            this.itens.push({...itemSelecionado, quantidade: 1});
+        }
     }
 
     retirarRemedios(itens: Remedio[]) {

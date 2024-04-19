@@ -121,4 +121,14 @@ export class InventarioComponent implements OnInit {
     getItensSelecionadosIds(itens: Remedio[]): number[] {
         return itens.map((item) => item.id);
     }
+
+    // onCartUpdated(event) {
+    //     const id = event.target.getAttribute('id');
+    //     const index = this.productItem.findIndex((elem) => elem.id == id);
+    //     this.cartUpdated.emit({
+    //         productId: this.productItem[index].id,
+    //         productName: this.productItem[index].name,
+    //         productPrice: this.productItem[index].price,
+    //     });
+    // }
 }

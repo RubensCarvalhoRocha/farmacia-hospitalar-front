@@ -2,7 +2,6 @@ import {
     Component,
     OnInit,
     ViewChild,
-    OnDestroy,
     Input,
     EventEmitter,
     Output,
@@ -20,14 +19,7 @@ import { Remedio } from 'app/model/Remedio';
     styleUrls: ['./inventario.component.scss'],
 })
 export class InventarioComponent implements OnInit {
-    @Input() cartTotal: number;
     itens: Remedio[] = [];
-    @Output() cartItemDeleted = new EventEmitter<{
-        productId: number;
-    }>();
-    @Output() cartItemChanged = new EventEmitter<{
-        productId: number;
-    }>();
 
     originalRemediosList: Remedio[] = [];
     remediosList: MatTableDataSource<Remedio>;
@@ -74,23 +66,6 @@ export class InventarioComponent implements OnInit {
         }
     }
 
-    onCartItemDeleted(productData: { productId: number }) {
-        this.cartItemDeleted.emit({
-            productId: productData.productId,
-        });
-    }
-
-    onCartItemChanged(productData: { productId: number }) {
-        this.cartItemChanged.emit({
-            productId: productData.productId,
-        });
-    }
-
-    // selecionarRemedio(itemSelecionado: Remedio) {
-    //     console.log(itemSelecionado);
-    //     this.itens.push(itemSelecionado);
-    // }
-
     selecionarRemedio(itemSelecionado: Remedio) {
         const itemExistente = this.itens.find(
             (item) => item.id === itemSelecionado.id
@@ -110,25 +85,23 @@ export class InventarioComponent implements OnInit {
 
         const selectedItemsWithQuantity = this.itens;
 
-        // Loop through each item in the array
         for (const item of selectedItemsWithQuantity) {
             console.log('Item ID:', item.id, 'Quantity:', item.quantidade);
         }
-        // Chamar a API para retirar os medicamentos com os IDs selecionados
-        // this._service.retirarMedicamentos(itensSelecionadosIds).subscribe(...);
     }
 
     getItensSelecionadosIds(itens: Remedio[]): number[] {
         return itens.map((item) => item.id);
     }
 
-    // onCartUpdated(event) {
-    //     const id = event.target.getAttribute('id');
-    //     const index = this.productItem.findIndex((elem) => elem.id == id);
-    //     this.cartUpdated.emit({
-    //         productId: this.productItem[index].id,
-    //         productName: this.productItem[index].name,
-    //         productPrice: this.productItem[index].price,
-    //     });
-    // }
+    atualizarItem(event) {
+        console.log('Item atualizado:', event);
+        console.log(this.itens);
+        const itemIndex = this.itens.findIndex(
+            (item) => item.id === event.productId
+        );
+        if (itemIndex !== -1) {
+            this.itens.splice(itemIndex, 1); // Remove o item da lista
+        }
+    }
 }

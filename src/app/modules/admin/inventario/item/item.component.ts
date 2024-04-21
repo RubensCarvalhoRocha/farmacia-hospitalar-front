@@ -1,41 +1,25 @@
-import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Remedio } from 'app/model/Remedio';
 
 @Component({
-  selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.scss']
+    selector: 'app-item',
+    templateUrl: './item.component.html',
+    styleUrls: ['./item.component.scss'],
 })
 export class ItemComponent implements OnInit {
-        @Input() item: Remedio;
-        @Output() itemDeletedo = new EventEmitter<{
-          productId: number
-        }>();
-        @Output() cartItemChanged = new EventEmitter<{
-          productId: number
-        }>();
+    @Input() item: Remedio;
 
-        onItemDeleted(event) {
-          const id = event.target.getAttribute('id');
-          this.itemDeletedo.emit({
-              productId: id
-            });
-        }
+    @Output() itemAtualizado = new EventEmitter<{
+        productId: number;
+    }>();
 
-        onItemChanged(event) {
-          const id = event.target.getAttribute('id');
-          this.cartItemChanged.emit({
-              productId: id
-            });
-        }
+    onItemChanged() {
+        this.itemAtualizado.emit({
+            productId: this.item.id,
+        });
+    }
 
-        constructor() {
-         }
+    constructor() {}
 
-        ngOnInit() {
-
-        }
-
-
-      }
-
+    ngOnInit() {}
+}

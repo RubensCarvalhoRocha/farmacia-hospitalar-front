@@ -41,7 +41,7 @@ export const appConfig: AppConfig = {
         lg: '1280px',
         xl: '1440px'
     },
-    theme  : 'theme-rose',
+    theme  : 'theme-teal',
     themes : [
         {
             id  : 'theme-default',

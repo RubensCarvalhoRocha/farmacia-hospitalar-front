@@ -3,6 +3,7 @@ import { environment } from 'envinronments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Remedio } from 'app/model/Remedio';
+import { Retirada } from 'app/model/Retirada';
 
 @Injectable({
     providedIn: 'root',
@@ -37,4 +38,13 @@ export class InventarioService {
         );
     }
 
+    retirarRemedio(retirada: Retirada): Observable<Remedio> {
+        return this.http
+            .post<Remedio>(`${environment.api}/retirada/retirar-medicamentos`, retirada)
+            .pipe(
+                catchError((error) => {
+                    return of(null);
+                })
+            );
+    }
 }

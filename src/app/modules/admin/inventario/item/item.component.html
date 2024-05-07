@@ -1,0 +1,25 @@
+<div class="cart-item-wrapper">
+    <div>Nome: {{ item.nomeMedicamento }}</div>
+    <div>Dosagem: {{ item.dosagem }} {{ item.medidaDosagem }}</div>
+    <div>
+        Quantidade:
+        <input
+            type="number"
+            value="{{ item.quantidade }}"
+            min="1"
+            id="{{ item.id }}"
+            [(ngModel)]="item.quantidade"
+            (change)="onItemChanged()"
+        />
+    </div>
+    <div>
+        <button
+            mat-icon-button
+            class="p-1 border border-black rounded-full"
+            id="{{ item.id }}"
+            (click)="onItemChanged()"
+        >
+            <mat-icon svgIcon="heroicons_outline:x-circle"></mat-icon>
+        </button>
+    </div>
+</div>

@@ -10,7 +10,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { InventarioService } from './inventario.service';
 import { Remedio } from 'app/model/Remedio';
-
+import { Retirada } from 'app/model/Retirada';
+import notyf from 'app/utils/utils';
 // import 'moment-timezone';
 
 @Component({
@@ -79,17 +80,29 @@ export class InventarioComponent implements OnInit {
         }
     }
 
-    retirarRemedios(itens: Remedio[]) {
-        const itensSelecionadosIds = this.getItensSelecionadosIds(itens);
-        console.log('Itens selecionados IDs:', itensSelecionadosIds);
+    retirarRemedios() {
+        const retirada: Retirada = {
+            medicamentoQuantidades: this.itens.map((item) => ({
+                medicamentoId: item.id,
+                quantidade: item.quantidade,
+            })),
+            funcionarioId: 1, // Usando id fixo para o funcionário
+            pacienteId: 2, // Usando id fixo para o paciente
+        };
 
-        const selectedItemsWithQuantity = this.itens;
-
-        for (const item of selectedItemsWithQuantity) {
-            console.log('Item ID:', item.id, 'Quantity:', item.quantidade);
-        }
+        this._service.retirarRemedio(retirada).subscribe({
+            next: (response) => {
+                console.log('Remédios retirados com sucesso:', response);
+                notyf.success('Remédios retirados com sucesso!');
+            },
+            error: (error) => {
+                console.log('Erro ao retirar remédios:', error);
+                notyf.error(
+                    'Erro ao retirar remédios. Por favor, tente novamente.'
+                );
+            },
+        });
     }
-
     getItensSelecionadosIds(itens: Remedio[]): number[] {
         return itens.map((item) => item.id);
     }
@@ -103,5 +116,9 @@ export class InventarioComponent implements OnInit {
         if (itemIndex !== -1) {
             this.itens.splice(itemIndex, 1); // Remove o item da lista
         }
+    }
+
+    teste(){
+        notyf.success('Teste');
     }
 }

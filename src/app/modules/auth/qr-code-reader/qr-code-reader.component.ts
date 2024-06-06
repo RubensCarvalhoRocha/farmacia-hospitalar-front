@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 
-import { ChangeDetectionStrategy, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Input,
+    OnDestroy,
+    OnInit,
+    ViewEncapsulation,
+} from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -12,13 +18,18 @@ import { Subject, takeUntil } from 'rxjs';
 export class QrCodeReaderComponent {
     @Input() drawer: MatDrawer;
 
+    mostrarScanner = true;
+
     qrCodeValue: string | null = null;
 
     onScanSuccess(result: string): void {
         this.qrCodeValue = result;
+        this.mostrarScanner = false;
     }
 
-    enviarCodigoObtido(){
-
+    resetScanner(): void {
+        this.mostrarScanner = true;
     }
+
+    enviarCodigoObtido() {}
 }
